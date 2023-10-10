@@ -9,6 +9,8 @@
 
 This example groups **Products** by **Categories** in code.
 
+![Group Data at Runtime](Images/screenshot.png)
+
 ## Files to Review
 
 * [Form1.cs](./CS/DataGrouping/Form1.cs) (VB: [Form1.vb](./VB/DataGrouping/Form1.vb))
