@@ -31,11 +31,11 @@ namespace DataGrouping {
             report.DataMember = "customQuery";
 
             // Create a detail band and add it to the report.
-            DetailBand detail = new DetailBand { HeightF = 40 };
+            DetailBand detail = new DetailBand { HeightF = 20 };
             report.Bands.Add(detail);
 
             // Create a group header band and add it to the report.
-            GroupHeaderBand ghBand = new GroupHeaderBand { HeightF = 40 };
+            GroupHeaderBand ghBand = new GroupHeaderBand { HeightF = 20 };
             report.Bands.Add(ghBand);
 
             // Create a group field and assign it to the group header band.
@@ -45,6 +45,8 @@ namespace DataGrouping {
             // Create new labels.
             XRLabel labelGroup = new XRLabel { ForeColor = System.Drawing.Color.Blue };
             XRLabel labelDetail = new XRLabel { LocationF = new System.Drawing.PointF(30, 0) };
+            labelDetail.WordWrap = false;
+            labelDetail.AutoWidth = true;
 
             // Specify labels' bindings depending on the report's data binding mode.
             if (Settings.Default.UserDesignerOptions.DataBindingMode == DataBindingMode.Bindings) {
@@ -65,7 +67,7 @@ namespace DataGrouping {
             // Create a grouping report and show its print preview.
             XtraReport report = CreateDataGroupingReport();
             ReportPrintTool printTool = new ReportPrintTool(report);
-            printTool.ShowPreview();
+            printTool.ShowPreview(); 
         }
 
     }

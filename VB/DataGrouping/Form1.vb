@@ -32,11 +32,11 @@ Namespace DataGrouping
             report.DataMember = "customQuery"
 
             ' Create a detail band and add it to the report.
-            Dim detail As DetailBand = New DetailBand With {.HeightF = 40}
+            Dim detail As DetailBand = New DetailBand With {.HeightF = 20}
             report.Bands.Add(detail)
 
             ' Create a group header band and add it to the report.
-            Dim ghBand As GroupHeaderBand = New GroupHeaderBand With {.HeightF = 40}
+            Dim ghBand As GroupHeaderBand = New GroupHeaderBand With {.HeightF = 20}
             report.Bands.Add(ghBand)
 
             ' Create a group field and assign it to the group header band.
@@ -46,6 +46,8 @@ Namespace DataGrouping
             ' Create new labels.
             Dim labelGroup As XRLabel = New XRLabel With {.ForeColor = System.Drawing.Color.Blue}
             Dim labelDetail As XRLabel = New XRLabel With {.LocationF = New System.Drawing.PointF(30, 0)}
+            labelDetail.WordWrap = False
+            labelDetail.AutoWidth = True
 
             ' Specify labels' bindings depending on the report's data binding mode.
             If Settings.Default.UserDesignerOptions.DataBindingMode = DataBindingMode.Bindings Then
